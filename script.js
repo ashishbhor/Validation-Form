@@ -24,4 +24,4 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const validateForm = () => {
-        let isValid = true;
+        let isValid = ;
