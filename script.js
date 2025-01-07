@@ -78,3 +78,22 @@ document.addEventListener('DOMContentLoaded', () => {
         submitButton.disabled = !isValid; // Disable button if invalid
         submitButton.classList.toggle('active', isValid); // Toggle 'active' class when valid
     };
+
+    // Toggle password visibility
+    togglePassword.addEventListener('click', () => {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        togglePassword.textContent = type === 'password' ? '👁️' : '🙄';
+    });
+    // Prevent form submission if invalid
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!submitButton.disabled) {
+            alert('Form submitted successfully!');
+        }
+    });
+
+    // Initial validation check (only affects the submit button)
+    validateForm();
+});
+
